@@ -1,5 +1,5 @@
 (function () {
-  if (!location.hostname.endsWith("adzuna.co.uk")) return;
+  if (!location.hostname.endsWith("adzuna.co")) return;
   if (document.getElementById("adzuna-copy-ui")) return;
 
   const API_URL = "http://45.15.160.247:5000/api/bids/get-draft";
