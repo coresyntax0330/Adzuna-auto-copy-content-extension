@@ -1,5 +1,28 @@
 (function () {
-  if (!location.hostname.endsWith("adzuna.co")) return;
+  const ALLOWED_HOSTS = [
+    "adzuna.com.au",
+    "adzuna.at",
+    "adzuna.be",
+    "adzuna.com.br",
+    "adzuna.ca",
+    "adzuna.fr",
+    "adzuna.de",
+    "adzuna.in",
+    "adzuna.it",
+    "adzuna.mx",
+    "adzuna.nl",
+    "adzuna.co.nz",
+    "adzuna.pl",
+    "adzuna.sg",
+    "adzuna.co.za",
+    "adzuna.es",
+    "adzuna.ch",
+    "adzuna.co.uk",
+    "adzuna.com",
+  ];
+
+  if (!ALLOWED_HOSTS.some((host) => location.hostname.endsWith(host))) return;
+
   if (document.getElementById("adzuna-copy-ui")) return;
 
   const API_URL = "http://45.15.160.247:5000/api/bids/get-draft";
